@@ -1,0 +1,8 @@
+﻿.card {
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.bg-blue-gradient {
+    background-image: linear-gradient(to right bottom, #004ec4, #0044ab, #003b92, #00317a, #002863);
+}

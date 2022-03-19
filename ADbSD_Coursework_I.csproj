@@ -155,10 +155,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Student.aspx" />
     <Content Include="Departments.aspx" />
+    <Content Include="custom.css" />
     <Content Include="Teacher.aspx" />
     <Content Include="Address.aspx" />
     <Content Include="Module.aspx" />
     <Content Include="TeacherModule.aspx" />
+    <Content Include="StudentPayment.aspx" />
+    <Content Include="StudentAssignment.aspx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -276,6 +279,20 @@
     </Compile>
     <Compile Include="TeacherModule.aspx.designer.cs">
       <DependentUpon>TeacherModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPayment.aspx.cs">
+      <DependentUpon>StudentPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPayment.aspx.designer.cs">
+      <DependentUpon>StudentPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentAssignment.aspx.cs">
+      <DependentUpon>StudentAssignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAssignment.aspx.designer.cs">
+      <DependentUpon>StudentAssignment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

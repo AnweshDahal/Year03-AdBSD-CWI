@@ -3,12 +3,74 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>Berkeley CMS</h1>
+        <p class="lead">ASP.NET and Oracle XE application for College Management</p>
     </div>
 
     <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-blue-gradient">
+                <div class="card-body">
+                    <p class="dashboard-card-title">
+                        total students
+                    </p>
+                    <p class="dashboard-title-data">
+                        <asp:Label runat="server" ID="totalStudentsLBL"></asp:Label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-blue-gradient">
+                <div class="card-body">
+                    <p class="dashboard-card-title">
+                        total teachers
+                    </p>
+                    <p class="dashboard-title-data">
+                        <asp:Label runat="server" ID="totalTeachersLBL"></asp:Label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-blue-gradient">
+                <div class="card-body">
+                    <p class="dashboard-card-title">
+                        total departments
+                    </p>
+                    <p class="dashboard-title-data">
+                        <asp:Label runat="server" ID="totalDepartmentsLBL"></asp:Label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-blue-gradient">
+                <div class="card-body">
+                    <p class="dashboard-card-title">
+                        total modules
+                    </p>
+                    <p class="dashboard-title-data">
+                        <asp:Label runat="server" ID="totalModulesLBL"></asp:Label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-blue-gradient">
+                <div class="card-body">
+                    <p class="dashboard-card-title">
+                        total Payments
+                    </p>
+                    <p class="dashboard-title-data">
+                        <asp:Label runat="server" ID="totalPaymentsLBL"></asp:Label>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%--<div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
             <p>
@@ -37,6 +99,6 @@
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
             </p>
         </div>
-    </div>
+    </div>--%>
 
 </asp:Content>

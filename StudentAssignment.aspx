@@ -1,26 +1,26 @@
-﻿<%@ Page Title="Teacher Module" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TeacherModule.aspx.cs" Inherits="ADbSD_Coursework_I.WebForm6" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StudentAssignment.aspx.cs" Inherits="ADbSD_Coursework_I.WebForm8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h1>Teacher Module</h1>
+        <h1>Student Assignment</h1>
     </div>
     <div>
         <div class="form-group mb-2">
-            <asp:Label ID="teacherSelectLBL" runat="server" Text="Select Teacher"></asp:Label>
-            <asp:DropDownList ID="teacherDropDown" runat="server" CssClass="form-control" DataSourceID="teacherSelectDatasource" DataTextField="NAME" DataValueField="ID">
+            <asp:Label ID="studentSelectLBL" runat="server" Text="Select Student"></asp:Label>
+            <asp:DropDownList ID="studentDropDown" runat="server" CssClass="form-control" DataSourceID="studentSelectDatasource" DataTextField="STUDENT_NAME" DataValueField="STUDENT_ID">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="teacherSelectDatasource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_BCMS %>" ProviderName="<%$ ConnectionStrings:ConnectionString_BCMS.ProviderName %>" SelectCommand="SELECT &quot;ID&quot;, &quot;NAME&quot; FROM &quot;TEACHER&quot;"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="studentSelectDatasource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString_BCMS %>" ProviderName="<%$ ConnectionStrings:ConnectionString_BCMS.ProviderName %>" SelectCommand="SELECT &quot;STUDENT_ID&quot;, &quot;STUDENT_NAME&quot; FROM &quot;STUDENT&quot;"></asp:SqlDataSource>
             </div>
         <div class="form-group mb-2">
-            <asp:Button ID="submitTeacherModuleBTN" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="submitTeacherModuleBTN_Click"/>
+            <asp:Button ID="submitTeacherModuleBTN" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="submitStudentAssignmentBTN_Click"/>
             <asp:Button ID="resetBTN" runat="server" Text="Reset" CssClass="btn btn-danger" OnClick="resetBTN_Click"/>
         </div>
     </div>
     <div>
         <asp:GridView 
-                    ID="teacherModuleGV" 
+                    ID="studentAssignmentGV" 
                     runat="server" 
                     CssClass="table" 
-                    DataKeyNames="teacher_id" 
+                    DataKeyNames="Submission Number" 
                     EmptyDataText="No Record Has Been Added!" 
                     CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />

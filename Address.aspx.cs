@@ -17,6 +17,7 @@ namespace ADbSD_Coursework_I
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Title = "Addresses";
             // Rendering the data in the grid view
             if (!this.IsPostBack)
             {

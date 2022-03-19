@@ -11,35 +11,35 @@ namespace ADbSD_Coursework_I
 {
 
 
-    public partial class WebForm6
+    public partial class WebForm7
     {
 
         /// <summary>
-        /// teacherSelectLBL control.
+        /// studentSelectLBL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label teacherSelectLBL;
+        protected global::System.Web.UI.WebControls.Label studentSelectLBL;
 
         /// <summary>
-        /// teacherDropDown control.
+        /// studentDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList teacherDropDown;
+        protected global::System.Web.UI.WebControls.DropDownList studentDropDown;
 
         /// <summary>
-        /// teacherSelectDatasource control.
+        /// studentSelectDatasource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource teacherSelectDatasource;
+        protected global::System.Web.UI.WebControls.SqlDataSource studentSelectDatasource;
 
         /// <summary>
         /// submitTeacherModuleBTN control.
@@ -60,12 +60,12 @@ namespace ADbSD_Coursework_I
         protected global::System.Web.UI.WebControls.Button resetBTN;
 
         /// <summary>
-        /// teacherModuleGV control.
+        /// studentPaymentGV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView teacherModuleGV;
+        protected global::System.Web.UI.WebControls.GridView studentPaymentGV;
     }
 }
