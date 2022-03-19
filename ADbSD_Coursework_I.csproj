@@ -158,6 +158,7 @@
     <Content Include="Teacher.aspx" />
     <Content Include="Address.aspx" />
     <Content Include="Module.aspx" />
+    <Content Include="TeacherModule.aspx" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -268,6 +269,13 @@
     </Compile>
     <Compile Include="Module.aspx.designer.cs">
       <DependentUpon>Module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherModule.aspx.cs">
+      <DependentUpon>TeacherModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherModule.aspx.designer.cs">
+      <DependentUpon>TeacherModule.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
