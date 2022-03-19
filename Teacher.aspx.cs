@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace ADbSD_Coursework_I
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
         private string connString = "ConnectionString_BCMS"; // Making the connection string a global variable
 
@@ -22,7 +22,7 @@ namespace ADbSD_Coursework_I
             }
         }
 
-        public void BindData()
+        protected void BindData()
         {
             // Defining the connection string for the database
             string constr = ConfigurationManager.ConnectionStrings[this.connString].ConnectionString;
@@ -34,43 +34,41 @@ namespace ADbSD_Coursework_I
             conn.Open(); // Opeaning a connection with the dB
             cmd.Connection = conn;
             // Query to select everything from the table
-            cmd.CommandText = @"SELECT student_id, student_title, student_name, student_address FROM student";
+            cmd.CommandText = @"SELECT id, name, email FROM teacher";
             cmd.CommandType = CommandType.Text;
 
             // Creating a new data table to store the data fetched from the database.
-            DataTable studentDT = new DataTable("student");
+            DataTable teacherDT = new DataTable("teacher");
 
             // Loading the data from the database into the data table
             using (OracleDataReader odr = cmd.ExecuteReader())
             {
-                studentDT.Load(odr);
+                teacherDT.Load(odr);
             }
 
             // Closing the connection to the database
             conn.Close();
 
-            studentsGV.DataSource = studentDT; // Setting teh data source of the grid view
-            studentsGV.DataBind(); // Binding the data to the grid view
-
+            teacherGV.DataSource = teacherDT; // Setting teh data source of the grid view
+            teacherGV.DataBind(); // Binding the data to the grid view
         }
 
-        protected void submitStudentBTN_Click(object sender, EventArgs e)
+        protected void submitTeacherBTN_Click(object sender, EventArgs e)
         {
             // Getting the data to submit
             int id = Int32.Parse(idTB.Text);
-            string studentName = studentNameTB.Text;
-            string studentAddress = studentAddressTB.Text;
-            string studentDesignation = designationSelect.SelectedItem.Value;
+            string teacherName = teacherNameTB.Text;
+            string teacherEmail = teacherEmailTB.Text;
 
             // Setting up the connection string
             string connstr = ConfigurationManager.ConnectionStrings[this.connString].ConnectionString;
             OracleConnection oCon = new OracleConnection(connstr);
 
             // If the Button Says Submit
-            if (submitStudentBTN.Text == "Submit")
+            if (submitTeacherBTN.Text == "Submit")
             {
                 // Initializing the Insertion Query
-                OracleCommand oCom = new OracleCommand(String.Format("INSERT INTO student (student_id, student_name, student_address, student_title) VALUES ({0}, '{1}', '{2}', '{3}')", id, studentName, studentAddress, studentDesignation));
+                OracleCommand oCom = new OracleCommand(String.Format("INSERT INTO teacher (id, name, email) VALUES ({0}, '{1}', '{2}')", id, teacherName, teacherEmail));
                 oCom.Connection = oCon;
                 oCon.Open();
                 oCom.ExecuteNonQuery();
@@ -78,13 +76,13 @@ namespace ADbSD_Coursework_I
 
                 // Clearing the fields
                 idTB.Text = "";
-                studentNameTB.Text = "";
-                studentAddressTB.Text = "";
+                teacherNameTB.Text = "";
+                teacherEmailTB.Text = "";
             }
-            else if (submitStudentBTN.Text == "Update")
+            else if (submitTeacherBTN.Text == "Update")
             {
                 // if the button says Update
-                OracleCommand oCom = new OracleCommand(String.Format("UPDATE student SET student_name = '{0}', student_address = '{1}', student_title = '{2}' WHERE student_id = {3}", studentName, studentAddress, studentDesignation, id));
+                OracleCommand oCom = new OracleCommand(String.Format("UPDATE teacher SET name = '{0}', email = '{1}' WHERE id = {2}", teacherName, teacherEmail, id));
                 oCom.Connection = oCon;
                 oCon.Open();
                 oCom.ExecuteNonQuery();
@@ -92,17 +90,14 @@ namespace ADbSD_Coursework_I
 
                 // Resetting the modifications made for update
                 idTB.Enabled = true;
-                submitStudentBTN.Text = "Submit";
-                studentsGV.EditIndex = -1;
+                submitTeacherBTN.Text = "Submit";
+                teacherGV.EditIndex = -1;
 
                 // Clearing the fields
                 idTB.Text = "";
-                studentNameTB.Text = "";
-                studentAddressTB.Text = "";
+                teacherNameTB.Text = "";
+                teacherEmailTB.Text = "";
             }
-
-
-            // Setting up the connection for the insert command
 
 
             this.BindData();
@@ -110,30 +105,30 @@ namespace ADbSD_Coursework_I
 
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != studentsGV.EditIndex)
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != teacherGV.EditIndex)
             {
                 (e.Row.Cells[0].Controls[2] as LinkButton).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
 
 
             }
-            studentsGV.EditIndex = -1;
+            teacherGV.EditIndex = -1;
 
         }
 
         protected void OnRowCancelEditing(object sender, EventArgs e)
         {
             this.BindData();
-            studentsGV.EditIndex = -1;
+            teacherGV.EditIndex = -1;
         }
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int ID = Convert.ToInt32(studentsGV.DataKeys[e.RowIndex].Values[0]);
+            int ID = Convert.ToInt32(teacherGV.DataKeys[e.RowIndex].Values[0]);
             string constr = ConfigurationManager.ConnectionStrings[this.connString].ConnectionString;
 
             using (OracleConnection oCon = new OracleConnection(constr))
             {
-                using (OracleCommand oCmd = new OracleCommand(String.Format("DELETE FROM student WHERE student_id = {0}", ID)))
+                using (OracleCommand oCmd = new OracleCommand(String.Format("DELETE FROM teacher WHERE id = {0}", ID)))
                 {
                     oCmd.Connection = oCon;
                     oCon.Open();
@@ -143,7 +138,7 @@ namespace ADbSD_Coursework_I
             }
 
             this.BindData();
-            studentsGV.EditIndex = -1;
+            teacherGV.EditIndex = -1;
 
         }
 
@@ -151,12 +146,11 @@ namespace ADbSD_Coursework_I
         {
 
             // get id for data update
-            idTB.Text = this.studentsGV.Rows[e.NewEditIndex].Cells[1].Text;
+            idTB.Text = this.teacherGV.Rows[e.NewEditIndex].Cells[1].Text;
             idTB.Enabled = false;
-            designationSelect.SelectedValue = this.studentsGV.Rows[e.NewEditIndex].Cells[2].Text.ToString().TrimStart().TrimEnd();
-            studentNameTB.Text = this.studentsGV.Rows[e.NewEditIndex].Cells[3].Text.ToString().TrimStart().TrimEnd(); // (row.Cells[2].Controls[0] as TextBox).Text;
-            studentAddressTB.Text = this.studentsGV.Rows[e.NewEditIndex].Cells[4].Text;
-            submitStudentBTN.Text = "Update";
+            teacherNameTB.Text = this.teacherGV.Rows[e.NewEditIndex].Cells[2].Text.ToString().TrimStart().TrimEnd(); // (row.Cells[2].Controls[0] as TextBox).Text;
+            teacherEmailTB.Text = this.teacherGV.Rows[e.NewEditIndex].Cells[3].Text;
+            submitTeacherBTN.Text = "Update";
         }
     }
 }

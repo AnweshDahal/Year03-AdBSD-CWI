@@ -1,46 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Student.aspx.cs" Inherits="ADbSD_Coursework_I.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Teacher.aspx.cs" Inherits="ADbSD_Coursework_I.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div>
-            <h3>Students</h3>
+            <h3>Teachers</h3>
         </div>
         <div>
             <div class="form-group mb-2">
-                <asp:Label ID="idLBL" runat="server" Text="Student ID"></asp:Label>
+                <asp:Label ID="idLBL" runat="server" Text="Teacher ID"></asp:Label>
                 <asp:TextBox ID="idTB" runat="server" CssClass="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic" ErrorMessage="This Field is Required!" ControlToValidate="idTB" ForeColor="#FF6666"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" Display="Dynamic" ErrorMessage="Only Numbers Allowed!" ControlToValidate="idTB" ForeColor="#FF6666" ValidationExpression="\d+"></asp:RegularExpressionValidator>
              </div> 
             <div class="form-group mb-2">
-                <asp:Label ID="designationSelectLBL" runat="server" Text="Select Title"></asp:Label>
-                <asp:DropDownList ID="designationSelect" runat="server" CssClass="form-control">
-                    <asp:ListItem>Mr.</asp:ListItem>
-                    <asp:ListItem>Mrs.</asp:ListItem>
-                    <asp:ListItem>Miss</asp:ListItem>
-                </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Display="Dynamic" ErrorMessage="This Field is Required!" ControlToValidate="designationSelect" ForeColor="#FF6666"></asp:RequiredFieldValidator>
+                <asp:Label ID="teacherNameLBL" runat="server" Text="Teacher Name"></asp:Label>
+                <asp:TextBox ID="teacherNameTB" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ErrorMessage="This Field is Required!" ControlToValidate="teacherNameTB" ForeColor="#FF6666"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group mb-2">
-                <asp:Label ID="studentNameLBL" runat="server" Text="Student Name"></asp:Label>
-                <asp:TextBox ID="studentNameTB" runat="server" CssClass="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic" ErrorMessage="This Field is Required!" ControlToValidate="studentNameTB" ForeColor="#FF6666"></asp:RequiredFieldValidator>
+                <asp:Label ID="teacherEmailLBL" runat="server" Text="Teacher Email"></asp:Label>
+                <asp:TextBox ID="teacherEmailTB" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ErrorMessage="This Field is Required!" ControlToValidate="teacherEmailTB" ForeColor="#FF6666"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group mb-2">
-                <asp:Label ID="studentAddressLBL" runat="server" Text="Student Address"></asp:Label>
-                <asp:TextBox ID="studentAddressTB" runat="server" CssClass="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ErrorMessage="This Field is Required!" ControlToValidate="studentAddressTB" ForeColor="#FF6666"></asp:RequiredFieldValidator>
-            </div>
-            <div class="form-group mb-2">
-                <asp:Button ID="submitStudentBTN" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="submitStudentBTN_Click"/>
+                <asp:Button ID="submitTeacherBTN" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="submitTeacherBTN_Click"/>
             </div>
         </div>
         <div>
 
             <asp:GridView 
-                    ID="studentsGV" 
+                    ID="teacherGV" 
                     runat="server" 
                     CssClass="table" 
-                    DataKeyNames="student_id" 
+                    DataKeyNames="id" 
                     OnRowEditing="OnRowEditing"
                     OnRowCancelingEdit="OnRowCancelEditing"
                     OnRowDeleting="OnRowDeleting" 

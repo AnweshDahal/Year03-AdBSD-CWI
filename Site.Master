@@ -51,8 +51,12 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Student">Student</a></li>
                         <li><a runat="server" href="~/Departments">Departments</a></li>
+                        <li><a runat="server" href="~/Address">Address</a></li>
+                        <li><a runat="server" href="~/Module">Module</a></li>
+                        <li><a runat="server" href="~/Teacher">Teacher</a></li>
+                        <li><a runat="server" href="~/Student">Student</a></li>
+
                     </ul>
                 </div>
             </div>

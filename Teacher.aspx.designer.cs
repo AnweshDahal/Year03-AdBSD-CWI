@@ -11,7 +11,7 @@ namespace ADbSD_Coursework_I
 {
 
 
-    public partial class WebForm1
+    public partial class WebForm3
     {
 
         /// <summary>
@@ -51,49 +51,22 @@ namespace ADbSD_Coursework_I
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
-        /// designationSelectLBL control.
+        /// teacherNameLBL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label designationSelectLBL;
+        protected global::System.Web.UI.WebControls.Label teacherNameLBL;
 
         /// <summary>
-        /// designationSelect control.
+        /// teacherNameTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList designationSelect;
-
-        /// <summary>
-        /// RequiredFieldValidator4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-
-        /// <summary>
-        /// studentNameLBL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label studentNameLBL;
-
-        /// <summary>
-        /// studentNameTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox studentNameTB;
+        protected global::System.Web.UI.WebControls.TextBox teacherNameTB;
 
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -105,22 +78,22 @@ namespace ADbSD_Coursework_I
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// studentAddressLBL control.
+        /// teacherEmailLBL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label studentAddressLBL;
+        protected global::System.Web.UI.WebControls.Label teacherEmailLBL;
 
         /// <summary>
-        /// studentAddressTB control.
+        /// teacherEmailTB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox studentAddressTB;
+        protected global::System.Web.UI.WebControls.TextBox teacherEmailTB;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -132,21 +105,21 @@ namespace ADbSD_Coursework_I
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// submitStudentBTN control.
+        /// submitTeacherBTN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submitStudentBTN;
+        protected global::System.Web.UI.WebControls.Button submitTeacherBTN;
 
         /// <summary>
-        /// studentsGV control.
+        /// teacherGV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView studentsGV;
+        protected global::System.Web.UI.WebControls.GridView teacherGV;
     }
 }
