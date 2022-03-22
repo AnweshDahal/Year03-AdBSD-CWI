@@ -36,7 +36,7 @@ namespace ADbSD_Coursework_I
             conn.Open(); // Opeaning a connection with the dB
             cmd.Connection = conn;
             // Query to select everything from the table
-            cmd.CommandText = @"SELECT module_code, module_name, credit_hour FROM module";
+            cmd.CommandText = @"SELECT module_code, module_name, credit_hour FROM module WHERE is_deleted IS NULL";
             cmd.CommandType = CommandType.Text;
 
             // Creating a new data table to store the data fetched from the database.
@@ -132,7 +132,7 @@ namespace ADbSD_Coursework_I
 
             using (OracleConnection oCon = new OracleConnection(constr))
             {
-                using (OracleCommand oCmd = new OracleCommand(String.Format("DELETE FROM module WHERE module_code = '{0}'", ID)))
+                using (OracleCommand oCmd = new OracleCommand(String.Format("UPDATE module SET is_deleted = 1 WHERE module_code = '{0}'", ID)))
                 {
                     oCmd.Connection = oCon;
                     oCon.Open();

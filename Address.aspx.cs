@@ -87,7 +87,7 @@ namespace ADbSD_Coursework_I
             conn.Open(); // Opeaning a connection with the dB
             cmd.Connection = conn;
             // Query to select everything from the table
-            cmd.CommandText = @"SELECT address_id, address FROM address";
+            cmd.CommandText = @"SELECT address_id, address FROM address WHERE is_deleted IS NULL";
             cmd.CommandType = CommandType.Text;
 
             // Creating a new data table to store the data fetched from the database.
@@ -132,7 +132,7 @@ namespace ADbSD_Coursework_I
 
             using (OracleConnection oCon = new OracleConnection(constr))
             {
-                using (OracleCommand oCmd = new OracleCommand(String.Format("DELETE FROM address WHERE address_id = {0}", ID)))
+                using (OracleCommand oCmd = new OracleCommand(String.Format("UPDATE address SET is_deleted = 1 WHERE address_id = {0}", ID)))
                 {
                     oCmd.Connection = oCon;
                     oCon.Open();

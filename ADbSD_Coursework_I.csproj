@@ -162,6 +162,8 @@
     <Content Include="TeacherModule.aspx" />
     <Content Include="StudentPayment.aspx" />
     <Content Include="StudentAssignment.aspx" />
+    <Content Include="fonts\Inter-Regular.ttf" />
+    <Content Include="fonts\Inter-Bold.ttf" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>

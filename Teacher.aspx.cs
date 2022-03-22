@@ -34,7 +34,7 @@ namespace ADbSD_Coursework_I
             conn.Open(); // Opeaning a connection with the dB
             cmd.Connection = conn;
             // Query to select everything from the table
-            cmd.CommandText = @"SELECT id, name, email FROM teacher";
+            cmd.CommandText = @"SELECT id, name, email FROM teacher WHERE is_deleted IS NULL";
             cmd.CommandType = CommandType.Text;
 
             // Creating a new data table to store the data fetched from the database.
@@ -128,7 +128,7 @@ namespace ADbSD_Coursework_I
 
             using (OracleConnection oCon = new OracleConnection(constr))
             {
-                using (OracleCommand oCmd = new OracleCommand(String.Format("DELETE FROM teacher WHERE id = {0}", ID)))
+                using (OracleCommand oCmd = new OracleCommand(String.Format("UPDATE teacher SET is_deleted = 1 WHERE id = {0}", ID)))
                 {
                     oCmd.Connection = oCon;
                     oCon.Open();
