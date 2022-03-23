@@ -4,7 +4,8 @@
 
     <div class="jumbotron">
         <h1>Berkeley CMS</h1>
-        <p class="lead">ASP.NET and Oracle XE application for College Management</p>
+        <p class="lead">ASP.NET and Oracle XE application for College Management<asp:Image ID="Image1" runat="server" ImageUrl="~/Content/michael-marsh-U0dBV_QeiYk-unsplash.jpg" Width="500px" />
+        </p>
     </div>
 
     <div class="row">
